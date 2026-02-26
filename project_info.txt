@@ -1,0 +1,102 @@
+GarageSale - Engineering Students' Marketplace
+=============================================
+
+Overview
+--------
+GarageSale is a full-stack web application designed for engineering students to buy and sell academic and related items within their community. The platform supports user authentication, item listing, real-time chat, watchlists, distance-based delivery cost calculation, and more.
+
+Technologies Used
+-----------------
+Frontend:
+- React.js: Main frontend framework for building user interfaces.
+- Material-UI (MUI): Component library for responsive and modern UI elements.
+- Formik & Yup: For form handling and validation.
+- Axios: For HTTP requests to the backend.
+- React Router: For client-side routing.
+- emoji-picker-react: Emoji picker for chat.
+- date-fns: Date formatting utilities.
+- Jest & React Testing Library: For unit and integration testing.
+
+Backend:
+- Node.js: JavaScript runtime for server-side code.
+- Express.js: Web framework for building RESTful APIs.
+- MongoDB: NoSQL database for storing users, items, chats, etc.
+- Mongoose: ODM for MongoDB.
+- JWT (jsonwebtoken): For authentication and authorization.
+- bcryptjs: For password hashing.
+- Multer: For handling file uploads (profile pictures, item photos).
+- Socket.io: (Planned/optional) For real-time features like chat.
+- dotenv: For environment variable management.
+- validator: For input validation.
+
+Development Tools:
+- concurrently: To run client and server together in development.
+- nodemon: For automatic server restarts during development.
+- Create React App: For bootstrapping the frontend.
+
+Project Structure
+-----------------
+
+garagesale/
+├── client/                 # Frontend React application
+│   ├── public/             # Static assets (index.html, manifest, logo, etc.)
+│   ├── src/
+│   │   ├── components/     # Reusable UI components (Navbar, Footer, Feedback, etc.)
+│   │   ├── context/        # React context (AuthContext, etc.)
+│   │   ├── pages/          # Main pages (Home, Dashboard, Profile, ItemDetail, etc.)
+│   │   ├── styles/         # Custom style files
+│   │   ├── utils/          # Utility functions (API, pincode, etc.)
+│   │   ├── App.js          # Main app component
+│   │   ├── index.js        # Entry point
+│   │   └── ...             # Other config and test files
+│   ├── package.json        # Frontend dependencies and scripts
+│   └── ...                 # README, .env, etc.
+├── server/                 # Backend Node.js/Express application
+│   ├── models/             # Mongoose models (User, Item, Chat, Feedback, etc.)
+│   ├── routes/             # Express route handlers (auth, items, users, chats, etc.)
+│   ├── middleware/         # Custom middleware (auth, etc.)
+│   ├── uploads/            # Uploaded files (profile pics, item images)
+│   ├── public/             # Static files (if any)
+│   ├── server.js           # Main server entry point
+│   ├── package.json        # Backend dependencies and scripts
+│   └── ...                 # .env, test scripts, etc.
+├── package.json            # Root scripts (for concurrently running client/server)
+├── README.md               # Project documentation
+└── ...                     # Other config files
+
+Main Features
+-------------
+- User Authentication: Register, login, JWT-based session management.
+- Profile Management: Edit profile, upload profile picture.
+- Item Listing: Create, edit, and view listings with images, categories, and details.
+- Watchlist: Add/remove items to a personal watchlist.
+- Smart Item Verification: (Planned/optional) Verification logic for listings.
+- Distance-Based Delivery Cost: Calculates distance and shipping charges based on pincodes.
+- Real-Time Chat: Chat between buyers and sellers (REST API, with Socket.io planned).
+- Search & Filtering: Search items, filter by category.
+- Responsive Design: Mobile-friendly UI.
+- Feedback System: Leave and view feedback for the platform.
+- Forum: (Optional) Community posts and discussions.
+- Admin Features: (Optional) Admin routes for moderation.
+
+How to Run
+----------
+1. Install dependencies:
+   npm install
+   cd client && npm install
+   cd ../server && npm install
+2. Start servers:
+   # Terminal 1 (Backend)
+   cd server && npm start
+
+   # Terminal 2 (Frontend)
+   cd client && npm start
+
+   Or use the root script:
+   npm run dev
+
+Contact
+-------
+For queries, contact:
+- 2023.aarya.rane@ves.ac.in
+- 2023.parth.chavan@ves.ac.in
